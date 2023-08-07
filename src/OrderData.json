@@ -1,0 +1,100 @@
+{
+  "1": {
+    "tree": {
+      "type": "christmas",
+      "size": "big"
+    },
+    "decorations": {
+      "1": {
+        "type": "regular",
+        "size": "small",
+        "color": "yellow"
+      },
+      "2": {
+        "type": "regular",
+        "size": "small",
+        "color": "yellow"
+      },
+      "3": {
+        "type": "regular",
+        "size": "medium",
+        "color": "green"
+      },
+      "4": {
+        "type": "regular",
+        "size": "medium",
+        "color": "pink"
+      },
+      "5": {
+        "type": "snowman",
+        "size": "big",
+        "color": "hand painted"
+      },
+      "6": {
+        "type": "regular",
+        "size": "small",
+        "color": "red"
+      },
+      "7": {
+        "type": "regular",
+        "size": "small",
+        "color": "red"
+      },
+      "8": {
+        "type": "snowman",
+        "size": "big",
+        "color": "hand painted"
+      }
+    },
+    "currency": "PLN"
+  },
+  "2": {
+    "tree": {
+      "type": "christmas",
+      "size": "medium"
+    },
+    "decorations": {
+      "1": {
+        "type": "regular",
+        "size": "small",
+        "color": "yellow"
+      },
+      "2": {
+        "type": "regular",
+        "size": "small",
+        "color": "yellow"
+      },
+      "3": {
+        "type": "regular",
+        "size": "medium",
+        "color": "green"
+      },
+      "4": {
+        "type": "regular",
+        "size": "medium",
+        "color": "pink"
+      },
+      "5": {
+        "type": "snowman",
+        "size": "big",
+        "color": "hand painted"
+      },
+      "6": {
+        "type": "regular",
+        "size": "small",
+        "color": "red"
+      },
+      "7": {
+        "type": "snowman",
+        "size": "big",
+        "color": "hand painted"
+      },
+      "8": {
+        "type": "snowman",
+        "size": "big",
+        "color": "hand painted"
+      }
+    },
+    "currency": "CZK"
+  }
+}

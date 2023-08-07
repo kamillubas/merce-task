@@ -1,0 +1,20 @@
+{
+	"types": [
+		"christmas"
+	],
+	"sizes": [
+		"small",
+		"medium",
+		"big"
+	],
+	"prices": {
+		"small": 100.00,
+		"medium": 200.00,
+		"big": 250.00
+	},
+	"rows": {
+		"small": 4,
+		"medium": 5,
+		"big": 6
+	}
+}

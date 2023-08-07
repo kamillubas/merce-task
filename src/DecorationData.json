@@ -1,0 +1,48 @@
+{
+	"types": {
+		"small": "regular",
+		"medium": "regular",
+		"big": [
+			"snowman",
+			"santa",
+			"reindeer"
+		]
+	},
+	"sizes": [
+		"small",
+		"medium",
+		"big"
+	],
+	"prices": {
+		"small": {
+			"red": 3.3,
+			"blue": 3.5,
+			"yellow": 3.6
+		},
+		"medium": {
+			"green": 4.44,
+			"white": 5.55,
+			"pink": 6.66
+		},
+		"big": {
+			"hand painted": {
+				"snowman": 8,
+				"santa": 8,
+				"reindeer": 8
+			}
+		}
+	},
+	"colors": {
+		"small": [
+			"red",
+			"blue",
+			"yellow"
+		],
+		"medium": [
+			"green",
+			"white",
+			"pink"
+		],
+		"big": "hand painted"
+	}
+}
