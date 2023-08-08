@@ -27,11 +27,8 @@ foreach ($fileDecoder->decodeJsonFile("OrderData.json") as $orderData) {
     $order = new Order($orderProcessor, $product, $orderImporter);
 
     if ($order->createOrder()) {
-        echo PHP_EOL."Cena udekorowanego drzewka numer: ".$orderProcessor->getOrder()->getId().PHP_EOL.
-            "wynosi: ".round($orderProcessor->calculateFinalPrice(), 2)." ".
-            $orderProcessor->getOrder()->getCurrency()->getSymbol().PHP_EOL;
+        $order->calculateFinalPrice();
     }
-
 }
 
 

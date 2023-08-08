@@ -40,4 +40,11 @@ class Order
 
         return true;
     }
+
+    public function calculateFinalPrice(): void
+    {
+        echo PHP_EOL."Cena udekorowanego drzewka numer: ".$this->orderProcessor->getOrder()->getId().PHP_EOL.
+            "wynosi: ".round($this->orderProcessor->calculateFinalPrice(), 2)." ".
+            $this->orderProcessor->getOrder()->getCurrency()->getSymbol().PHP_EOL;
+    }
 }
