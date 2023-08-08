@@ -23,14 +23,21 @@ class Order
         $this->product = $product;
         $this->orderDataImporter = $orderDataImporter;
     }
-    public function createOrder(): void
+    public function createOrder(): bool
     {
         $this->product->createProducts($this->orderDataImporter);
-        $currency = $this->orderDataImporter->getOrderCurrency();
         try {
-            $this->orderProcessor->process($this->product->getTree(), $this->product->getDecorations(), $currency);
+            $this->orderProcessor->process(
+                $this->product->getTree(),
+                $this->product->getDecorations(),
+                $this->orderDataImporter->getOrderCurrency()
+            );
         } catch (Exception $e) {
             echo $e->getMessage();
+
+            return false;
         }
+
+        return true;
     }
 }

@@ -15,23 +15,23 @@ class OrderProcessor implements ConditionsCheckerInterface
 {
     private Order $order;
 
-    public function process(Tree $tree, DecorationCollection $decorationCollection, Currency $currency): void
+    public function process(Tree $tree, DecorationCollection $decorationCollection, Currency $currency): Order
     {
         if ($this->isAllowedDecorationQuantity($tree, $decorationCollection) &&
         $this->isDecorationSizeAllowedOnTree($tree, $decorationCollection)) {
-            $this->order = new Order(uniqid('order'), $tree, $decorationCollection, $currency->getSymbol());
+            return $this->order = new Order(uniqid('order'), $tree, $decorationCollection, $currency);
         } else {
             throw new Exception("Wybrane dekoracje nie pasują do drzewka, lub ich ilość jest za duża");
         }
     }
 
-    public function calculateFinalPrice(Currency $currency): float
+    public function calculateFinalPrice(): float
     {
         $price = $this->order->getTree()->getPrice();
         foreach ($this->order->getDecorations()->getDecorationsCollection() as $decoration) {
             $price += $decoration->getPrice();
         }
-        return $price / $currency->getValue();
+        return $price / $this->order->getCurrency()->getValue();
     }
 
     public function isDecorationSizeAllowedOnTree(Tree $tree, DecorationCollection $decorationCollection): bool

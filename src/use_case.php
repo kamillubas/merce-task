@@ -24,13 +24,14 @@ $product = new Product($productFactory, $productImporter);
 
 foreach ($fileDecoder->decodeJsonFile("OrderData.json") as $order) {
     $orderImporter = new OrderDataImporter($order, $currencyImporter);
-    $order = new Order($orderProcessor, $product, $orderImporter, $currencyImporter);
+    $order = new Order($orderProcessor, $product, $orderImporter);
 
-    $order->createOrder();
+    if ($order->createOrder()) {
+        echo PHP_EOL."Cena udekorowanego drzewka numer: ".$orderProcessor->getOrder()->getId().PHP_EOL.
+            "wynosi: ".round($orderProcessor->calculateFinalPrice(), 2)." ".
+            $orderProcessor->getOrder()->getCurrency()->getSymbol().PHP_EOL;
+    }
 
-    echo "Cena udekorowanego drzewka numer: ".$orderProcessor->getOrder()->getId().PHP_EOL.
-        "wynosi: ".round($orderProcessor->calculateFinalPrice($orderImporter->getOrderCurrency()), 2)." ".
-        $orderProcessor->getOrder()->getCurrency().PHP_EOL;
 }
 
 

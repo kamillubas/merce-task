@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Domain\Order\Model;
 
+use Domain\Currency\Model\Currency;
 use Domain\Product\Model\Collection\DecorationCollection;
 use Domain\Product\Model\Tree\Tree;
 
@@ -11,9 +12,9 @@ class Order
     private string $id;
     private Tree $tree;
     private DecorationCollection $decorations;
-    private string $currency;
+    private Currency $currency;
 
-    public function __construct(string $id, Tree $tree, DecorationCollection $decorations, string $currency)
+    public function __construct(string $id, Tree $tree, DecorationCollection $decorations, Currency $currency)
     {
         $this->id = $id;
         $this->tree =$tree;
@@ -36,7 +37,7 @@ class Order
         return $this->decorations;
     }
 
-    public function getCurrency(): string
+    public function getCurrency(): Currency
     {
         return $this->currency;
     }
