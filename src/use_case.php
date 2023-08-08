@@ -22,8 +22,8 @@ $productFactory = new ProductFactory();
 $orderProcessor = new OrderProcessor();
 $product = new Product($productFactory, $productImporter);
 
-foreach ($fileDecoder->decodeJsonFile("OrderData.json") as $order) {
-    $orderImporter = new OrderDataImporter($order, $currencyImporter);
+foreach ($fileDecoder->decodeJsonFile("OrderData.json") as $orderData) {
+    $orderImporter = new OrderDataImporter($orderData, $currencyImporter);
     $order = new Order($orderProcessor, $product, $orderImporter);
 
     if ($order->createOrder()) {
