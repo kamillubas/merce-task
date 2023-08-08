@@ -49,7 +49,7 @@ class OrderProcessor implements ConditionsCheckerInterface
 
     public function isAllowedDecorationQuantity(Tree $tree, DecorationCollection $decorationCollection): bool
     {
-        if ($this->countDecorations($decorationCollection) < $this->countMaxDecorationsOnTree($tree)) {
+        if ($this->countDecorations($decorationCollection) <= $this->countMaxDecorationsOnTree($tree)) {
             return true;
         }
         return false;
@@ -72,6 +72,6 @@ class OrderProcessor implements ConditionsCheckerInterface
 
     private function countDecorations(DecorationCollection $decorationCollection): int
     {
-        return array_sum($decorationCollection->getDecorationsCollection());
+        return count($decorationCollection->getDecorationsCollection());
     }
 }
